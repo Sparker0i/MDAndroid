@@ -17,7 +17,6 @@
 package com.a5corp.materialdesign;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -48,10 +47,10 @@ public class ListContentFragment extends Fragment {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView avator;
+        ImageView avator;
         public TextView name;
-        public TextView description;
-        public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
+        TextView description;
+        ViewHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_list, parent, false));
             avator = (ImageView) itemView.findViewById(R.id.list_avatar);
             name = (TextView) itemView.findViewById(R.id.list_title);
@@ -67,7 +66,7 @@ public class ListContentFragment extends Fragment {
         private final String[] mPlaces;
         private final String[] mPlaceDesc;
         private final Drawable[] mPlaceAvators;
-        public ContentAdapter(Context context) {
+        ContentAdapter(Context context) {
             Resources resources = context.getResources();
             mPlaces = resources.getStringArray(R.array.places);
             mPlaceDesc = resources.getStringArray(R.array.place_desc);
